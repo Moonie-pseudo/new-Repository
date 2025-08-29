@@ -3,9 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- daisy ui and tailwind -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- font awesome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <title>Document</title>
+
 </head>
+
 <body>
+    <header class="max-w-[1920px] h-[100px] p-5 flex justify-between items-center">
+
+        <div id="name-logo " class="flex gap-1.5">
+            <img src="B12-A5-Emergency-Hotline/assets/logo.png" alt="" class="h-[50px] w-[50px]">
+            <p class="font-bold text-[#006747]" >Emergency<br>Service</p>
+        </div>
+
+        <div class=" h-[52px] w-[397px] flex justify-between gap-5 ">
+
+            <div id="heart-nav" class="py-3 px-5 w-[123px] flex flex-row justify-center items-center gap-2 rounded-3xl bg-[#41FF6B1A]">
+                <span id="heart-count" class="font-bold">0</span>
+                <img src="B12-A5-Emergency-Hotline/assets/heart.png" alt="" class="h-[1.875rem]">
+            </div>
+
+            <div id="coin-nav" class="py-3 px-5 w-[123px] flex flex-row justify-center items-center gap-2 rounded-3xl bg-[#41FF6B1A]">
+                <span id="coin-count" class="font-bold">100</span>
+                <img src="B12-A5-Emergency-Hotline/assets/coin.png" alt="" class="h-[1.5rem]">
+            </div>
+
+            <div id="copy-nav" class="py-3 px-5 w-[123px] flex flex-row justify-center items-center gap-2 rounded-3xl font-semibold text-white bg-[#00A63E]">
+                <span id="copy-count">0</span> Copy
+            </div>
+        </div>
+    </header>
+
     
 </body>
 </html>
