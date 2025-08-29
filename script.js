@@ -42,11 +42,19 @@ cardHearts.forEach(heart => {
   
       alert(`Calling ${serviceName} at ${serviceNumber}`);
 
+      const now = new Date();
+    const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+
+
       const entry = document.createElement('div');
-      entry.className = " bg-gray-50 border-b border-gray-200 px-2 py-2";
+      entry.className = " bg-gray-50 border-b border-gray-200 px-3 py-2 flex justify-between items-center";
+
       entry.innerHTML = `
+        <div>
         <p class="font-semibold">${serviceName}</p>
         <p class="text-gray-600">${serviceNumber}</p>
+        </div>
+        <p class="text-gray-400 text-sm ml-3"> ${timeString}</p>
       `;
       callHistoryEntriesEl.appendChild(entry);
 
@@ -58,3 +66,28 @@ clearHistoryBtn.addEventListener('click', () => {
   callHistoryEntriesEl.innerHTML = ''; 
 });
 
+//challenge section
+
+// Copy button functionality
+const copyButtons = document.querySelectorAll('.copy-btn');
+const copyCountEl = document.getElementById('copy-count'); 
+
+copyButtons.forEach(button => {
+  button.addEventListener('click', () => {
+   
+    const card = button.closest('.card');
+    const serviceNumber = card.querySelector('.font-bold').textContent.trim();
+
+
+    navigator.clipboard.writeText(serviceNumber).then(() => {
+
+      let count = parseInt(copyCountEl.textContent) || 0;
+      count += 1;
+      copyCountEl.textContent = count;
+
+      alert(`Hotline number ${serviceNumber} copied!`);
+    }).catch(err => {
+      console.error('Failed to copy: ', err);
+    });
+  });
+});
